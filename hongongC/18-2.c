@@ -4,6 +4,8 @@ int main(void)
 {
 	FILE *fp;
 	int ch;
+	char str[80];
+	int i = 0;
 
 	fp = fopen("a.txt", "r");
 	if (fp == NULL)
@@ -19,8 +21,12 @@ int main(void)
 		{
 			break;
 		}
-		putchar(ch);
+		//putchar(ch);
+		str[i] = ch;
+		i++;
 	}
+	printf("%s", str);
+
 	fclose(fp);
 
 	return 0;

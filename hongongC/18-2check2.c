@@ -14,5 +14,7 @@ int main(void)
 	if (i < (sizeof(str) - 1)) str[i++] = ch;
 	str[i] = '\0';
 
+	printf("%s", str);
+
 	return 0;
 }
