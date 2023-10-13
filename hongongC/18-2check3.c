@@ -12,12 +12,11 @@ int main(void)
 		printf("파일을 열지 못했습니다.");
 		return 1;
 	}
-	//ch = fgetc(fp);
-	//while (fgetc(fp) != EOF);
+	ch = fgetc(fp); //이때 a.txt의 모든 내용이 버퍼에 입력되나?
+	while (fgetc(fp) != EOF); //조건문만 있고 실행문이 없다. 즉 조건만 확인하고 아무 작업도 안 하고 반복된다. 
 
-	fgets(str, sizeof(str), fp);
-	fgets(str, sizeof(str), fp);
-	printf("%s", str);
+	fgets(str, sizeof(str), fp); //버퍼가 비었으니 입력을 못하고 NULL 반환.
+	printf("%s", str); //걍 6행의 empty 출력
 	fclose(fp);
 
 	return 0;
